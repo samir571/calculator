@@ -1,6 +1,8 @@
 from _ast import Lambda
 from tkinter import*
 
+expression = ""
+
 def button_click(number):
     global expression
     expression = expression + str(number)
@@ -18,13 +20,12 @@ def button_equal():
         equation.set(total)
         expression = ""
     except:
-        equation.set("error! zero division case")
+        equation.set("error!")
         expression=""
 
 root = Tk()
 root.title("CALCULATOR")
 root.iconbitmap(r'calculator.ico')
-expression = ""
 equation = StringVar()
 
 txtDisplay = Entry(root, font=('arial', 20,'bold'), textvariable=equation,bd=30, insertwidth=30,bg="light blue")\
